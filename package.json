@@ -1,0 +1,45 @@
+{
+  "name": "jbj-ist",
+  "version": "1.0.0",
+  "description": "JBJ IST module",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "pretest": "npm run build && npm run lint",
+    "lint": "eslint src",
+    "build": "babel src --out-dir lib --source-maps inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Inist-CNRS/node-jbj-ist.git"
+  },
+  "keywords": [
+    "JSON",
+    "jbj",
+    "ist",
+    "DOI",
+    "Elsevier",
+    "SUDOC",
+    "HAL",
+    "identifiers"
+  ],
+  "author": "François Parmentier <francois.parmentier@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Inist-CNRS/node-jbj-ist/issues"
+  },
+  "homepage": "https://github.com/Inist-CNRS/node-jbj-ist#readme",
+  "devDependencies": {
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
+    "eslint": "^1.10.3",
+    "jbj": "^4.0.0",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "meta-doi": "^0.4.0",
+    "meta-els": "^0.3.1",
+    "methal": "^2.0.2",
+    "sudoc": "^1.0.2"
+  }
+}

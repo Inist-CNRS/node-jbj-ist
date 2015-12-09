@@ -1,0 +1,9 @@
+{
+    "DOI #1": {
+        "input": "10.1016/0735-6757(91)90169-K",
+        "stylesheet": {
+            "resolveDOI": true
+        },
+        "expected": {}
+    }
+}
