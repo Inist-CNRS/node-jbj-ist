@@ -34,7 +34,6 @@ $ npm test
 
 Once the module is declared as used for JBJ, you can use the following actions:
 
-
 <a id="resolveDOI"></a>
 ### resolveDOI: doi | [doi1,doi2,...]
 

@@ -4,6 +4,16 @@
         "stylesheet": {
             "resolveDOI": true
         },
-        "expected": {}
+        "expected": {
+            "doi-publication-title": [
+                "Dokl Biochem Biophys",
+                "Doklady Biochemistry and Biophysics" ],
+           "doi-publication-date-year": 2011,
+           "doi-publisher": "Pleiades Publishing Ltd",
+           "doi-type": "journal-article",
+           "doi-ISSN": [ "1607-6729", "1608-3091" ],
+           "doi-subject": [ "Chemistry(all)", "Biochemistry", "Biophysics" ],
+           "doi-DOI": "10.1134/s1607672911010121"
+        }
     }
 }
