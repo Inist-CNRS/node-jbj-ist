@@ -11,12 +11,9 @@ module.exports = function ist(exec, execmap) {
    * @param  {Boolean}      arg   not used (could be used for options)
    * @return {Object|Array}       an object or an array of objects
    */
-  filters.resolveDOI = function (input, arg) {
-    return exec(arg, function (arg) {
-      return metadoi.resolve(input, {}, (err, metadata) => {
-        if (err) { return err; }
-        return metadata;
-      })
+  filters.resolveDOI = function (input, arg, next) {
+    exec(arg, function (arg) {
+        metadoi.resolve(input, {}, next)
     }, "resolveDOI");
   }
 
