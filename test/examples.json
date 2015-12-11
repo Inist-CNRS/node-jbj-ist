@@ -1,19 +1,17 @@
 {
     "DOI #1": {
-        "input": "10.1016/0735-6757(91)90169-K",
+        "input": "10.1134/S1607672911010121",
         "stylesheet": {
             "resolveDOI": true
         },
-        "expected": {
-            "doi-publication-title": [
-                "Dokl Biochem Biophys",
-                "Doklady Biochemistry and Biophysics" ],
-           "doi-publication-date-year": 2011,
-           "doi-publisher": "Pleiades Publishing Ltd",
-           "doi-type": "journal-article",
-           "doi-ISSN": [ "1607-6729", "1608-3091" ],
-           "doi-subject": [ "Chemistry(all)", "Biochemistry", "Biophysics" ],
-           "doi-DOI": "10.1134/s1607672911010121"
+        "expected": { "doi-publication-title":
+           [ "Dokl Biochem Biophys",
+             "Doklady Biochemistry and Biophysics" ],
+          "doi-publication-date-year": 2011,
+          "doi-publisher": "Pleiades Publishing Ltd",
+          "doi-type": "journal-article",
+          "doi-ISSN": [ "1607-6729", "1608-3091" ],
+          "doi-subject": [ "Biophysics", "Biochemistry", "Chemistry(all)" ],
+          "doi-DOI": "10.1134/s1607672911010121" }
         }
-    }
 }
