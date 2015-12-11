@@ -9,7 +9,8 @@ module.exports = function ist(exec, execmap) {
    *
    * @param  {String|Array} input An array of or a DOI (string)
    * @param  {Boolean}      arg   not used (could be used for options)
-   * @return {Object|Array}       an object or an array of objects
+   * @param  {function}     next  callback(err,res) to trigger next action in
+   *                              stylesheet
    */
   filters.resolveDOI = function (input, arg, next) {
     exec(arg, function (arg) {
