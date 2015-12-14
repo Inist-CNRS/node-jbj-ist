@@ -8,7 +8,7 @@ var assert = require('assert')
 JBJ.use(require('../lib/'));
 
 
-describe('Asynchronous ist', function () {
+describe('IST', function () {
   for (var example in examples) {
     it(example, function (done) {
       var input      = examples[example].input;
