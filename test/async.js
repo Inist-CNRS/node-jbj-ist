@@ -9,7 +9,7 @@ JBJ.use(require('../lib/'));
 
 
 describe('IST', function () {
-  for (var example in examples) {
+  Object.keys(examples).forEach(function (example) {
     it(example, function (done) {
       var input      = examples[example].input;
       var stylesheet = examples[example].stylesheet;
@@ -19,5 +19,5 @@ describe('IST', function () {
         done(err);
       });
     });
-  }
+  });
 });
