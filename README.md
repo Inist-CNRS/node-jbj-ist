@@ -102,6 +102,33 @@ Or, with an array:
    // [ "001014692", "000928151" ]
 ```
 
+<a id="ean2ppn"></a>
+### ean2ppn: ean | [ean1,ean2,...]
+
+Return PPN for the given EAN (one or several, via an array).
+
+```javascript
+  var stylesheet = {
+    "set": "5901234123457",
+    "ean2ppn": true
+  };
+  // output:
+  // "189158077"
+```
+
+Or, with an array:
+
+```javascript
+   var stylesheet = {
+       "set": ["5901234123457", "9782729602956"]
+       "ean2ppn": true
+   };
+   // output:
+   // [ "189158077", [ "001496433", "007162766" ] ]
+```
+
+
+
 ## Examples
 
 See unit tests : https://github.com/Inist-CNRS/node-jbj-ist/tree/master/test
