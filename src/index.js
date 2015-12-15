@@ -44,5 +44,30 @@ module.exports = function ist(exec, execmap) {
     }, "issn2ppn");
   }
 
+  /**
+   * Return the PPN of an ISBN (or several)
+   *
+   * @param  {String|Array}   input An array of or one ISBN (string)
+   * @param  {Boolean}        arg  not used
+   * @param  {Function}       next  next(err,res) to trigger next action in
+   *                                stylesheet
+   */
+  filters.isbn2ppn = function (input, arg, next) {
+    exec(arg, function(arg) {
+      sudoc.isbn2ppn(input, (err, result) => {
+        const record2ppn = record => record.query.result.ppn;
+        if (err) { next(err); }
+        if (Array.isArray(result)) {
+          const results = result.map(record2ppn);
+          next(err, results);
+        }
+        else {
+          const res = record2ppn(result);
+          next(err, res);
+        }
+      });
+    }, "isbn2ppn");
+  }
+
   return filters;
 }

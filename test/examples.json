@@ -29,5 +29,19 @@
             "issn2ppn": true
         },
         "expected": [ "001014692", "000928151" ]
+    },
+    "isbn2ppn #1": {
+        "input": "978-3-16-148410-0",
+        "stylesheet": {
+            "isbn2ppn": true
+        },
+        "expected": "114442231"
+    },
+    "isbn2ppn #2": {
+        "input": ["978-3-16-148410-0", "2729112367"],
+        "stylesheet": {
+            "isbn2ppn": true
+        },
+        "expected": [ "114442231", "045205264" ]
     }
 }
