@@ -96,7 +96,7 @@ Or, with an array:
 ```javascript
    var stylesheet = {
        "set": ["0182-2012", "0774-3122"]
-       "resolveDOI": true
+       "issn2ppn": true
    };
    // output:
    // [ "001014692", "000928151" ]
