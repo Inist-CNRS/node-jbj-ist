@@ -43,5 +43,19 @@
             "isbn2ppn": true
         },
         "expected": [ "114442231", "045205264" ]
+    },
+    "ean2ppn #1": {
+        "input": "5901234123457",
+        "stylesheet": {
+            "ean2ppn": true
+        },
+        "expected": "189158077"
+    },
+    "ean2ppn #2": {
+        "input": ["5901234123457", "9782729602956"],
+        "stylesheet": {
+            "ean2ppn": true
+        },
+        "expected": [ "189158077", [ "001496433", "007162766"] ]
     }
 }
