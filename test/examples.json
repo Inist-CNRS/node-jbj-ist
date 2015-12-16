@@ -1,61 +1,111 @@
 {
-    "resolveDOI #1": {
-        "input": "10.1134/S1607672911010121",
-        "stylesheet": {
-            "resolveDOI": true
-        },
-        "expected": {
-            "doi-publication-title":
-                [ "Dokl Biochem Biophys",
-                  "Doklady Biochemistry and Biophysics" ],
-            "doi-publication-date-year": 2011,
-            "doi-publisher": "Pleiades Publishing Ltd",
-            "doi-type": "journal-article",
-            "doi-ISSN": [ "1607-6729", "1608-3091" ],
-            "doi-subject": [ "Biophysics", "Biochemistry", "Chemistry(all)" ],
-            "doi-DOI": "10.1134/s1607672911010121"
-        }
+  "resolveDOI #1": {
+    "input": "10.1134/S1607672911010121",
+    "stylesheet": {
+      "resolveDOI": true
     },
-    "issn2ppn #1": {
-        "input": "0182-2012",
-        "stylesheet": {
-            "issn2ppn": true
-        },
-        "expected": "001014692"
-    },
-    "issn2ppn #2": {
-        "input": ["0182-2012", "0774-3122"],
-        "stylesheet": {
-            "issn2ppn": true
-        },
-        "expected": [ "001014692", "000928151" ]
-    },
-    "isbn2ppn #1": {
-        "input": "978-3-16-148410-0",
-        "stylesheet": {
-            "isbn2ppn": true
-        },
-        "expected": "114442231"
-    },
-    "isbn2ppn #2": {
-        "input": ["978-3-16-148410-0", "2729112367"],
-        "stylesheet": {
-            "isbn2ppn": true
-        },
-        "expected": [ "114442231", "045205264" ]
-    },
-    "ean2ppn #1": {
-        "input": "5901234123457",
-        "stylesheet": {
-            "ean2ppn": true
-        },
-        "expected": "189158077"
-    },
-    "ean2ppn #2": {
-        "input": ["5901234123457", "9782729602956"],
-        "stylesheet": {
-            "ean2ppn": true
-        },
-        "expected": [ "189158077", [ "001496433", "007162766"] ]
+    "expected": {
+      "doi-publication-title": ["Dokl Biochem Biophys",
+        "Doklady Biochemistry and Biophysics"
+      ],
+      "doi-publication-date-year": 2011,
+      "doi-publisher": "Pleiades Publishing Ltd",
+      "doi-type": "journal-article",
+      "doi-ISSN": ["1607-6729", "1608-3091"],
+      "doi-subject": ["Biophysics", "Biochemistry", "Chemistry(all)"],
+      "doi-DOI": "10.1134/s1607672911010121"
     }
+  },
+
+  "issn2ppn #1": {
+    "input": "0182-2012",
+    "stylesheet": {
+      "issn2ppn": true
+    },
+    "expected": "001014692"
+  },
+  "issn2ppn #2": {
+    "input": ["0182-2012", "0774-3122"],
+    "stylesheet": {
+      "issn2ppn": true
+    },
+    "expected": ["001014692", "000928151"]
+  },
+
+  "isbn2ppn #1": {
+    "input": "978-3-16-148410-0",
+    "stylesheet": {
+      "isbn2ppn": true
+    },
+    "expected": "114442231"
+  },
+  "isbn2ppn #2": {
+    "input": ["978-3-16-148410-0", "2729112367"],
+    "stylesheet": {
+      "isbn2ppn": true
+    },
+    "expected": ["114442231", "045205264"]
+  },
+
+  "ean2ppn #1": {
+    "input": "5901234123457",
+    "stylesheet": {
+      "ean2ppn": true
+    },
+    "expected": "189158077"
+  },
+  "ean2ppn #2": {
+    "input": ["5901234123457", "9782729602956"],
+    "stylesheet": {
+      "ean2ppn": true
+    },
+    "expected": ["189158077", ["001496433", "007162766"]]
+  },
+
+  "resolvePII #1": {
+    "input": "S1534580715000751",
+    "stylesheet": {
+      "resolvePII": true
+    },
+    "expected": {
+      "els-publication-title": "Developmental Cell",
+      "els-article-title": "A CRISPR/Cas9 Vector System for Tissue-Specific Gene Disruption in Zebrafish ",
+      "els-doi": "10.1016/j.devcel.2015.01.032",
+      "els-pii": "S1534-5807(15)00075-1",
+      "els-type": "Journal",
+      "els-ISSN": "15345807",
+      "els-ISBN": "",
+      "els-publication-date": "2015-03-23",
+      "els-publication-date-year": "2015",
+      "els-meta": {
+        "prism:url": "http://api.elsevier.com/content/article/pii/S1534580715000751",
+        "dc:identifier": "doi:10.1016/j.devcel.2015.01.032",
+        "eid": "1-s2.0-S1534580715000751",
+        "prism:doi": "10.1016/j.devcel.2015.01.032",
+        "pii": "S1534-5807(15)00075-1",
+        "dc:title": "A CRISPR/Cas9 Vector System for Tissue-Specific Gene Disruption in Zebrafish ",
+        "prism:publicationName": "Developmental Cell",
+        "prism:aggregationType": "Journal",
+        "prism:issn": "15345807",
+        "prism:coverDate": "2015-03-23",
+        "prism:coverDisplayDate": "23 March 2015",
+        "openaccess": "0",
+        "openaccessArticle": false,
+        "openaccessType": null,
+        "openArchiveArticle": false,
+        "openaccessSponsorName": null,
+        "openaccessSponsorType": null,
+        "openaccessUserLicense": null,
+        "link": [{
+          "@_fa": "true",
+          "@href": "http://api.elsevier.com/content/article/pii/S1534580715000751",
+          "@rel": "self"
+        }, {
+          "@_fa": "true",
+          "@href": "http://www.sciencedirect.com/science/article/pii/S1534580715000751",
+          "@rel": "scidir"
+        }]
+      }
+    }
+  }
 }
