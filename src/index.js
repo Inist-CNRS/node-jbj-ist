@@ -19,11 +19,31 @@ module.exports = function ist(exec, execmap) {
     }, "resolveDOI");
   }
 
+  /**
+   * record2ppn return the record.query.result.ppn
+   *
+   * @param  {Object} record A result of a sudoc function
+   * @return {String|Array}  One PPN, or an array of PPNs.
+   */
+  const record2ppn = record => {
+    if (record && record.query && record.query.result &&
+        Array.isArray(record.query.result)) {
+      return record.query.result.map(item => item.ppn);
+    }
+    return record.query.result.ppn;
+  }
+
+  /**
+   * sudoAction return the filter using the func
+   *
+   * @param  {Function} func     sudoc function
+   * @param  {String} actionName name of the action to create
+   * @return {Function}          filter to add to the module
+   */
   const sudocAction = function (func,actionName) {
     return function (input, arg, next) {
       exec(arg, function(arg) {
         func(input, (err, result) => {
-          const record2ppn = record => record.query.result.ppn;
           if (err) { next(err); }
           if (Array.isArray(result)) {
             const results = result.map(record2ppn);
