@@ -1,6 +1,7 @@
 import * as assert  from 'assert';
 import * as metadoi from 'meta-doi';
 import * as sudoc   from 'sudoc';
+import * as metaELS from 'meta-els';
 
 module.exports = function ist(exec, execmap) {
   const filters = {};
@@ -87,6 +88,21 @@ module.exports = function ist(exec, execmap) {
    *                                stylesheet
    */
   filters.ean2ppn = sudocAction(sudoc.ean2ppn, "ean2ppn");
+
+
+  /**
+   * resolve the PII into metadata
+   *
+   * @param  {String|Array} input An array of or a PII (string)
+   * @param  {Boolean}      arg   not used (could be used for options)
+   * @param  {function}     next  callback(err,res) to trigger next action in
+   *                              stylesheet
+   */
+  filters.resolvePII = function (input, arg, next) {
+    exec(arg, function (arg) {
+        metaELS.resolve({"pii":input}, next)
+    }, "resolvePII");
+  }
 
   return filters;
 }
