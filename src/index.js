@@ -19,6 +19,25 @@ module.exports = function ist(exec, execmap) {
     }, "resolveDOI");
   }
 
+  const sudocAction = function (func,actionName) {
+    return function (input, arg, next) {
+      exec(arg, function(arg) {
+        func(input, (err, result) => {
+          const record2ppn = record => record.query.result.ppn;
+          if (err) { next(err); }
+          if (Array.isArray(result)) {
+            const results = result.map(record2ppn);
+            next(err, results);
+          }
+          else {
+            const res = record2ppn(result);
+            next(err, res);
+          }
+        });
+      }, actionName);
+    }
+  }
+
   /**
    * Return the PPN of an ISSN (or several)
    *
@@ -27,22 +46,7 @@ module.exports = function ist(exec, execmap) {
    * @param  {Function}       next  next(err,res) to trigger next action in
    *                                stylesheet
    */
-  filters.issn2ppn = function (input, arg, next) {
-    exec(arg, function(arg) {
-      sudoc.issn2ppn(input, (err, result) => {
-        const record2ppn = record => record.query.result.ppn;
-        if (err) { next(err); }
-        if (Array.isArray(result)) {
-          const results = result.map(record2ppn);
-          next(err, results);
-        }
-        else {
-          const res = record2ppn(result);
-          next(err, res);
-        }
-      });
-    }, "issn2ppn");
-  }
+   filters.issn2ppn = sudocAction(sudoc.issn2ppn, "issn2ppn");
 
   /**
    * Return the PPN of an ISBN (or several)
@@ -52,22 +56,7 @@ module.exports = function ist(exec, execmap) {
    * @param  {Function}       next  next(err,res) to trigger next action in
    *                                stylesheet
    */
-  filters.isbn2ppn = function (input, arg, next) {
-    exec(arg, function(arg) {
-      sudoc.isbn2ppn(input, (err, result) => {
-        const record2ppn = record => record.query.result.ppn;
-        if (err) { next(err); }
-        if (Array.isArray(result)) {
-          const results = result.map(record2ppn);
-          next(err, results);
-        }
-        else {
-          const res = record2ppn(result);
-          next(err, res);
-        }
-      });
-    }, "isbn2ppn");
-  }
+  filters.isbn2ppn = sudocAction(sudoc.isbn2ppn, "isbn2ppn");
 
   /**
    * Return the PPN of an EAN (or several)
@@ -77,22 +66,7 @@ module.exports = function ist(exec, execmap) {
    * @param  {Function}       next  next(err,res) to trigger next action in
    *                                stylesheet
    */
-  filters.ean2ppn = function (input, arg, next) {
-    exec(arg, function(arg) {
-      sudoc.ean2ppn(input, (err, result) => {
-        const record2ppn = record => record.query.result.ppn;
-        if (err) { next(err); }
-        if (Array.isArray(result)) {
-          const results = result.map(record2ppn);
-          next(err, results);
-        }
-        else {
-          const res = record2ppn(result);
-          next(err, res);
-        }
-      });
-    }, "ean2ppn"/*, next*/);
-  }
+  filters.ean2ppn = sudocAction(sudoc.ean2ppn, "ean2ppn");
 
   return filters;
 }
