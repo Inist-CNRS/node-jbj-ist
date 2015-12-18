@@ -15,13 +15,8 @@ describe('IST', function () {
       var stylesheet = examples[example].stylesheet;
       var expected   = examples[example].expected;
       JBJ.render(stylesheet, input, function (err, output) {
-        try {
-          assert.deepEqual(output, expected);
-          done(err);
-        }
-        catch(e) {
-          done(e);
-        }
+        assert.deepEqual(output, expected);
+        done(err);
       });
     });
   });
