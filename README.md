@@ -130,7 +130,7 @@ Or, with an array:
 <a id="resolvePII"></a>
 ### resolvePII: pii
 
-Return metadata from a PII (Document Object Identifier), using Elsevier's API.
+Return metadata from a PII (Publisher Item Identifier), using Elsevier's API.
 
 ```javascript
    var stylesheet = {
@@ -184,7 +184,7 @@ Return metadata from a PII (Document Object Identifier), using Elsevier's API.
 <a id="resolveHAL"></a>
 ### resolveHAL: docid
 
-Return metadata from a HAL (Document Object Identifier).
+Return metadata from a HAL identifier.
 
 ```javascript
    var stylesheet = {
