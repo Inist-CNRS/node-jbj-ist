@@ -107,5 +107,17 @@
         }]
       }
     }
+  },
+
+  "resolveHAL #1": {
+    "input": "19",
+    "stylesheet": {
+        "resolveHAL": true
+    },
+    "expected": {
+      "docid": 19,
+      "uri_s": "https://hal.archives-ouvertes.fr/hal-00000019",
+      "label_s": "Mark Wexler, Francesco Panerai, Ivan Lamouret, Jacques Droulez. Self-motion and the perception of stationary objects. Nature, Nature Publishing Group, 2001, 409, pp.85-88. &lt;hal-00000019&gt;"
+    }
   }
 }

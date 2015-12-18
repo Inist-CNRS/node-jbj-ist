@@ -2,6 +2,7 @@ import * as assert  from 'assert';
 import * as metadoi from 'meta-doi';
 import * as sudoc   from 'sudoc';
 import * as metaELS from 'meta-els';
+import * as methal  from 'methal';
 
 module.exports = function ist(exec, execmap) {
   const filters = {};
@@ -102,6 +103,20 @@ module.exports = function ist(exec, execmap) {
     exec(arg, function (arg) {
         metaELS.resolve({"pii":input}, next)
     }, "resolvePII");
+  }
+
+  /**
+   * resolve the HAL identifier into metadata
+   *
+   * @param  {String|Array} input HAL identifier (string)
+   * @param  {Boolean}      arg   not used (could be used for options)
+   * @param  {function}     next  callback(err,res) to trigger next action in
+   *                              stylesheet
+   */
+  filters.resolveHAL = function (input, arg, next) {
+    exec(arg, function (arg) {
+        methal.findOne({"docid":input}, next)
+    }, "resolveHAL");
   }
 
   return filters;

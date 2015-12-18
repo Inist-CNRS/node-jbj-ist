@@ -182,6 +182,28 @@ PIIs (using CrossRef).
 ```
 
 
+<a id="resolveHAL"></a>
+### resolveHAL: pii
+
+Return metadata from a HAL (Document Object Identifier), or from an array of
+HALs (using CrossRef).
+
+```javascript
+   var stylesheet = {
+       "set": "19",
+       "resolveHAL": true
+   };
+   // output:
+   // {
+   //   "docid": 19,
+   //   "uri_s": "https://hal.archives-ouvertes.fr/hal-00000019",
+   //   "label_s": "Mark Wexler, Francesco Panerai, Ivan Lamouret, Jacques 
+   //   Droulez. Self-motion and the perception of stationary objects. Nature, 
+   //   Nature Publishing Group, 2001, 409, pp.85-88. &lt;hal-00000019&gt;"
+   // }
+```
+
+
 ## Examples
 
 See unit tests : https://github.com/Inist-CNRS/node-jbj-ist/tree/master/test
