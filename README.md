@@ -130,8 +130,7 @@ Or, with an array:
 <a id="resolvePII"></a>
 ### resolvePII: pii
 
-Return metadata from a PII (Document Object Identifier), or from an array of
-PIIs (using CrossRef).
+Return metadata from a PII (Document Object Identifier), using Elsevier's API.
 
 ```javascript
    var stylesheet = {
@@ -183,10 +182,9 @@ PIIs (using CrossRef).
 
 
 <a id="resolveHAL"></a>
-### resolveHAL: pii
+### resolveHAL: docid
 
-Return metadata from a HAL (Document Object Identifier), or from an array of
-HALs (using CrossRef).
+Return metadata from a HAL (Document Object Identifier).
 
 ```javascript
    var stylesheet = {
