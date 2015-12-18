@@ -127,6 +127,59 @@ Or, with an array:
    // [ "189158077", [ "001496433", "007162766" ] ]
 ```
 
+<a id="resolvePII"></a>
+### resolvePII: pii
+
+Return metadata from a PII (Document Object Identifier), or from an array of
+PIIs (using CrossRef).
+
+```javascript
+   var stylesheet = {
+       "set": "10.1134/S1607672911010121",
+       "resolvePII": true
+   };
+   // output:
+   //   {
+   //      "els-publication-title": "Developmental Cell",
+   //      "els-article-title": "A CRISPR/Cas9 Vector System for Tissue-Specific Gene Disruption in Zebrafish ",
+   //      "els-doi": "10.1016/j.devcel.2015.01.032",
+   //      "els-pii": "S1534-5807(15)00075-1",
+   //      "els-type": "Journal",
+   //      "els-ISSN": "15345807",
+   //      "els-ISBN": "",
+   //      "els-publication-date": "2015-03-23",
+   //      "els-publication-date-year": "2015",
+   //      "els-meta": {
+   //        "prism:url": "http://api.elsevier.com/content/article/pii/S1534580715000751",
+   //        "dc:identifier": "doi:10.1016/j.devcel.2015.01.032",
+   //        "eid": "1-s2.0-S1534580715000751",
+   //        "prism:doi": "10.1016/j.devcel.2015.01.032",
+   //        "pii": "S1534-5807(15)00075-1",
+   //        "dc:title": "A CRISPR/Cas9 Vector System for Tissue-Specific Gene Disruption in Zebrafish ",
+   //        "prism:publicationName": "Developmental Cell",
+   //        "prism:aggregationType": "Journal",
+   //        "prism:issn": "15345807",
+   //        "prism:coverDate": "2015-03-23",
+   //        "prism:coverDisplayDate": "23 March 2015",
+   //        "openaccess": "0",
+   //        "openaccessArticle": false,
+   //        "openaccessType": null,
+   //        "openArchiveArticle": false,
+   //        "openaccessSponsorName": null,
+   //        "openaccessSponsorType": null,
+   //        "openaccessUserLicense": null,
+   //        "link": [{
+   //          "@_fa": "true",
+   //          "@href": "http://api.elsevier.com/content/article/pii/S1534580715000751",
+   //          "@rel": "self"
+   //        }, {
+   //          "@_fa": "true",
+   //          "@href": "http://www.sciencedirect.com/science/article/pii/S1534580715000751",
+   //          "@rel": "scidir"
+   //        }]
+   //      }
+   //    }
+```
 
 
 ## Examples
