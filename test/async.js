@@ -5,7 +5,7 @@ var assert = require('assert')
   , JBJ = require('jbj')
   , examples = require('./examples.json');
 
-JBJ.use(require('../lib/'));
+JBJ.use(require('../src/'));
 
 
 describe('IST', function () {
