@@ -1,5 +1,7 @@
 # JBJ IST module
 
+[![Travis-CI](https://img.shields.io/travis/Inist-CNRS/node-jbj-ist.svg "Travis-CI")](https://travis-ci.org/Inist-CNRS/node-jbj-ist)
+
 IST module of JBJ: bibliographic metadata handling.
 
 ## Contributors
