@@ -105,6 +105,37 @@ Or, with an array:
    // [ "001014692", "000928151" ]
 ```
 
+> **Warning**: `issn2ppn`, `ean2ppn`, and `isbn2ppn` work only with node
+> version 4+.
+
+<a id="isbn2ppn"></a>
+### isbn2ppn: isbn | [isbn1,isbn2,...]
+
+Return PPN for the given ISBN (one or several, via an array).
+
+```javascript
+  var stylesheet = {
+    "set": "978-3-16-148410-0",
+    "isbn2ppn": true
+  };
+  // output:
+  // "114442231"
+```
+
+Or, with an array:
+
+```javascript
+   var stylesheet = {
+       "set": ["978-3-16-148410-0", "2729112367"]
+       "isbn2ppn": true
+   };
+   // output:
+   // [ "114442231", "045205264" ]
+```
+
+> **Warning**: `issn2ppn`, `ean2ppn`, and `isbn2ppn` work only with node
+> version 4+.
+
 <a id="ean2ppn"></a>
 ### ean2ppn: ean | [ean1,ean2,...]
 
@@ -129,6 +160,9 @@ Or, with an array:
    // output:
    // [ "189158077", [ "001496433", "007162766" ] ]
 ```
+
+> **Warning**: `issn2ppn`, `ean2ppn`, and `isbn2ppn` work only with node
+> version 4+.
 
 <a id="resolvePII"></a>
 ### resolvePII: pii
